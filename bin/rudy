@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-use Huxtable\Core\FileInfo;
+use Huxtable\Core\File;
 
 $appName = basename( __FILE__ );
 
@@ -33,7 +33,7 @@ $app = new Huxtable\CLI\Application( $appName, $config['version'], $config['php-
 /*
  * Register commands
  */
-$commandsFolder = new FileInfo( $dirCommands );
+$commandsFolder = new File\Directory( $dirCommands );
 $commandFiles = $commandsFolder->children();
 
 foreach( $commandFiles as $commandFile )
