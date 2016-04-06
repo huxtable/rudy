@@ -33,8 +33,13 @@ $app = new Huxtable\CLI\Application( $appName, $config['version'], $config['php-
 /*
  * Register commands
  */
+$fileFilter = new File\Filter();
+$fileFilter
+->setDefaultMethod( $fileFilter::METHOD_INCLUDE )
+->includeFileExtension( 'php' );
+
 $commandsFolder = new File\Directory( $dirCommands );
-$commandFiles = $commandsFolder->children();
+$commandFiles = $commandsFolder->children( $fileFilter );
 
 foreach( $commandFiles as $commandFile )
 {
