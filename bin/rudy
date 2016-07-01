@@ -19,11 +19,8 @@ $config = require_once( $dirLib . '/config.php' );
 /*
  * Initialize autoloading
  */
-include_once( $dirVendor . '/huxtable/cli/src/CLI/Autoloader.php' );
-Huxtable\CLI\Autoloader::register();
-
-include_once( $dirVendor . '/huxtable/core/src/Core/Autoloader.php' );
-Huxtable\Core\Autoloader::register();
+include_once( $dirVendor . '/huxtable/cli/autoload.php' );
+include_once( $dirVendor . '/huxtable/core/autoload.php' );
 
 /*
  * App configuration
